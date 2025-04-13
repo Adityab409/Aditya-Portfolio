@@ -6,12 +6,12 @@ const projects = [
       id: 1,
       title: 'Project Hub',
       image: image1,
-      link: image2, // ✅ Added live link here
+      link: 'https://project-hub-five-mu.vercel.app', // ✅ Added live link here
     },
     {
       id: 2,
       title: 'Ecommerce App',
-      image: './src/assets/image2.png',
+      image: image2,
       link: 'https://www.figma.com/proto/c2vf2HE58MR2XsNiFVSVse/Practice?node-id=48-9&t=CcEy9gBSo39AJxeZ-1',
     },
   ];
