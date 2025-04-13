@@ -1,10 +1,12 @@
+import image1 from '../assets/image1.png';
+import image2 from '../assets/image2.png';
 
 const projects = [
     {
       id: 1,
       title: 'Project Hub',
-      image: './src/assets/image1.png',
-      link: 'https://project-hub-five-mu.vercel.app', // ✅ Added live link here
+      image: image1,
+      link: image2, // ✅ Added live link here
     },
     {
       id: 2,
