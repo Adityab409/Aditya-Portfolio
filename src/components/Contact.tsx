@@ -1,56 +1,43 @@
-
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-yellow-400 py-16 text-center text-black px-4">
-      {/* Signature */}
-      <h2 className="text-4xl font-arizonia text-black ">Aditya Sonawane</h2>
+    <section id="contact" className="bg-[#0B0B0F] text-white py-20 px-6">
 
-      {/* Invitation */}
-      
-      <p className=" font-semibold mb-6 text-4xl">
-        Let’s build something awesome together<br />your ideas are always welcome!
-      </p>
+      <div className="max-w-5xl mx-auto text-center">
 
-      {/* Contact Me Button */}
-      <button
-  onClick={() => alert('📧 Email: adityabsonawane409@gmail.com\n📞 Mobile: 9309129443')}
-  className="bg-black text-white px-8 py-3 rounded-full text-xl font-bold shadow-lg transition border border-black hover:bg-white hover:text-black"
->
-  Contact me
-</button>
+        <h2 className="text-5xl font-bold mb-6">
+          Let's <span className="text-orange-500">Connect</span>
+        </h2>
 
+        <p className="text-gray-400 mb-10">
+          Interested in collaborating or discussing a project?
+          Feel free to reach out.
+        </p>
 
-      {/* Social Icons */}
-     {/* Social Icons */}
-<div className="flex justify-center items-center gap-6 mt-10 text-4xl">
-  <a
-    href="https://www.linkedin.com/in/aditya-sonawane-590166331/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaLinkedin className="hover:text-blue-700 transition" />
-  </a>
-  <a
-    href="https://github.com/Adityab409"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaGithub className="hover:text-gray-800 transition" />
-  </a>
-  <a
-    href="https://instagram.com/adityabs_49"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaInstagram className="hover:text-pink-600 transition" />
-  </a>
-</div>
+        {/* Social icons */}
+        <div className="flex justify-center gap-6 text-3xl mb-12">
 
+          <a href="https://linkedin.com/in/aditya-sonawane-590166331">
+            <FaLinkedin className="hover:text-blue-500 transition" />
+          </a>
 
-      {/* Email */}<b>
-      <p className="mt-6 text-1xl ">@adityabsonawane409@gmail.com</p></b>
+          <a href="https://github.com/Adityab409">
+            <FaGithub className="hover:text-white transition" />
+          </a>
+
+          <a href="https://instagram.com/adityabs_49">
+            <FaInstagram className="hover:text-pink-500 transition" />
+          </a>
+
+        </div>
+
+      </div>
+
+      {/* Contact form */}
+      <ContactForm />
+
     </section>
   );
 };
