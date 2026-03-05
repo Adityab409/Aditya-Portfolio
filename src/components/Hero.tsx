@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         <h1 className="text-4xl md:text-5xl font-extrabold text-black">
           Hello, <br /> I’m <span className="text-black">ADITYA</span>
         </h1>
-        <p className="text-gray-900 text-lg">A Computer Engineer diving into UI/UX</p>
+        <p className="text-gray-900 text-lg">Computer Enginnering student</p>
         <div className="flex space-x-4">
         <button
   onClick={() => alert('📧 Email: adityabsonawane409@gmail.com\n📞 Mobile: 9309129443')}
