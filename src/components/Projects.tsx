@@ -1,53 +1,88 @@
-import image1 from '../assets/image1.png';
-import image2 from '../assets/image2.png';
+import image1 from "../assets/image1.png";
+import image2 from "../assets/image2.png";
 
 const projects = [
-    {
-      id: 1,
-      title: 'Project Hub',
-      image: image1,
-      link: 'https://project-hub-five-mu.vercel.app', // ✅ Added live link here
-    },
-    {
-      id: 2,
-      title: 'Ecommerce App',
-      image: image2,
-      link: 'https://www.figma.com/proto/c2vf2HE58MR2XsNiFVSVse/Practice?node-id=48-9&t=CcEy9gBSo39AJxeZ-1',
-    },
-  ];
-  
-  const Projects = () => {
-    return (
-      <section id="projects" className="bg-orange-500 py-16 px-4 text-center">
-        <h2 className="text-5xl font-bold text-black mb-2">Projects</h2>
-        <p className="text-white mb-10  text-2xl">
-          Explore some of the ideas I’ve brought to life — where creativity meets functionality.
-        </p>
-        <div className="grid gap-8 md:grid-cols-2 justify-items-center">
-          {projects.map(({ id, title, image, link }) => (
-            <div
-              key={id}
-              className="relative bg-purple-500 text-white p-4 rounded-lg shadow-lg max-w-xs hover:scale-105 transition"
-            >
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-green-400 text-black font-bold rounded-full flex items-center justify-center text-xl border-4 border-white shadow-md z-10">
-                {id}
+  {
+    title: "PetCare – Grooming & Veterinary Booking System",
+    description:
+      "An appointment-based platform for pet grooming and veterinary consultations built using Java technologies.",
+    tech: ["Servlets", "JSP", "JDBC", "HTML", "CSS"],
+    image: image1,
+    link: "#",
+  },
+  {
+    title: "Hotel Waste Redistribution System",
+    description:
+      "A system designed to collect surplus food from hotels and redistribute it to NGOs efficiently.",
+    tech: ["Spring MVC", "Hibernate", "MySQL", "JSP"],
+    image: image2,
+    link: "#",
+  },
+];
+
+const Projects = () => {
+  return (
+    <section id="projects" className="bg-[#0B0B0F] text-white py-20 px-6">
+
+      <h2 className="text-5xl font-bold text-center mb-16">
+        My <span className="text-orange-500">Projects</span>
+      </h2>
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-[#111111] border border-gray-800 rounded-xl overflow-hidden hover:border-orange-500 transition"
+          >
+
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-56 object-cover"
+            />
+
+            <div className="p-6">
+
+              <h3 className="text-2xl font-semibold mb-3">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-400 mb-4">
+                {project.description}
+              </p>
+
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-md text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+
               </div>
-              <h3 className="mt-8 mb-4 text-xl font-semibold">{title}</h3>
-              <img src={image} alt={title} className="rounded-md mx-auto mb-4" />
+
               <a
-                href={link}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-yellow-400 text-black px-6 py-2 font-semibold rounded transition hover:bg-black hover:text-white"
-
+                className="inline-block bg-orange-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-orange-400 transition"
               >
-                View
+                View Project
               </a>
+
             </div>
-          ))}
-        </div>
-      </section>
-    );
-  };
-  
-  export default Projects;
+          </div>
+        ))}
+
+      </div>
+
+    </section>
+  );
+};
+
+export default Projects;
