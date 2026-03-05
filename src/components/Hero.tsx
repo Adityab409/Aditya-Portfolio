@@ -1,101 +1,71 @@
-import React from "react";
-import { FaLinkedin, FaInstagram, FaGithub, FaFigma } from "react-icons/fa";
-import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiTailwindcss,
-  SiC,
-} from "react-icons/si";
-import Adityaimage from "../assets/Aditya.png";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const floatingIcons = [
-  { icon: <SiHtml5 className="text-orange-400 text-4xl" />, style: "top-[20%] left-[20%]" },
-  { icon: <SiCss3 className="text-blue-400 text-4xl" />, style: "top-[35%] right-[25%]" },
-  { icon: <SiJavascript className="text-yellow-300 text-4xl" />, style: "bottom-[25%] left-[30%]" },
-  { icon: <SiReact className="text-cyan-300 text-4xl" />, style: "bottom-[20%] right-[20%]" },
-  { icon: <SiTailwindcss className="text-sky-300 text-4xl" />, style: "top-[55%] left-[45%]" },
-  { icon: <SiC className="text-gray-300 text-4xl" />, style: "top-[45%] right-[40%]" },
-  { icon: <FaFigma className="text-pink-400 text-4xl" />, style: "bottom-[15%] left-[55%]" },
-];
-
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white overflow-hidden px-6"
+      className="min-h-screen flex items-center justify-center bg-[#0B0B0F] text-white px-6"
     >
+      <div className="max-w-4xl text-center">
 
-      {/* subtle grid background */}
-      <div className="absolute inset-0 opacity-20 
-      bg-[radial-gradient(circle,rgba(255,115,0,0.25)_1px,transparent_1px)]
-      [background-size:50px_50px]" />
-
-      {/* floating icons */}
-      {floatingIcons.map((item, idx) => (
-        <div
-          key={idx}
-          className={`absolute opacity-30 hover:scale-110 transition ${item.style}`}
-        >
-          {item.icon}
-        </div>
-      ))}
-
-      {/* CENTER CONTENT */}
-      <div className="text-center z-10 max-w-3xl">
-
-        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
-          ADITYA
-        </h1>
-
-        <p className="text-orange-400 text-xl mt-4 tracking-widest uppercase">
-          Computer Engineering Student
+        <p className="text-orange-500 tracking-widest uppercase mb-4">
+          Hello, I'm
         </p>
 
-        {/* buttons */}
-        <div className="flex justify-center gap-6 mt-10">
+        <h1 className="text-6xl md:text-7xl font-extrabold mb-6">
+          Aditya <span className="text-orange-500">Sonawane</span>
+        </h1>
 
-          <button
-            onClick={() =>
-              alert(
-                "📧 Email: adityabsonawane409@gmail.com\n📞 Mobile: 9309129443"
-              )
-            }
-            className="px-8 py-3 bg-orange-500 text-black font-semibold rounded-md
-            hover:bg-orange-400 transition shadow-lg"
+        <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
+          Java Developer & UI/UX Designer
+        </h2>
+
+        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Computer Engineering student passionate about building
+          responsive web applications using Java technologies like
+          Servlets, JSP, JDBC and Spring MVC while creating clean
+          and user-friendly interfaces.
+        </p>
+
+        {/* Buttons */}
+
+        <div className="flex justify-center gap-6 mt-10 flex-wrap">
+
+          <a
+            href="#projects"
+            className="bg-orange-500 text-black px-6 py-3 rounded-md font-semibold hover:bg-orange-400 transition"
           >
-            Hire Me
-          </button>
+            View Projects
+          </a>
 
           <a
             href="/Aditya_Sonawane_CV.pdf"
             download
-            className="px-8 py-3 border border-orange-500 rounded-md
-            hover:bg-orange-500 hover:text-black transition"
+            className="border border-orange-500 px-6 py-3 rounded-md hover:bg-orange-500 hover:text-black transition"
           >
             Download CV
           </a>
 
         </div>
 
-        {/* social icons */}
-        <div className="flex justify-center gap-8 text-3xl mt-10">
+        {/* Social Links */}
 
-          <a
-            href="https://www.linkedin.com/in/aditya-sonawane-590166331/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="hover:text-blue-400 transition" />
-          </a>
+        <div className="flex justify-center gap-8 text-3xl mt-10 text-gray-400">
 
           <a
             href="https://github.com/Adityab409"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub className="hover:text-orange-400 transition" />
+            <FaGithub className="hover:text-white transition" />
+          </a>
+
+          <a
+            href="https://linkedin.com/in/aditya-sonawane-590166331"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="hover:text-blue-400 transition" />
           </a>
 
           <a
@@ -107,21 +77,8 @@ const Hero: React.FC = () => {
           </a>
 
         </div>
-      </div>
-
-      {/* floating image */}
-      <div className="absolute bottom-10 right-10 md:right-20">
-
-        <img
-          src={Adityaimage}
-          alt="Aditya"
-          className="w-[220px] md:w-[300px] rounded-xl
-          shadow-[0_0_40px_rgba(255,115,0,0.6)]
-          hover:scale-105 transition"
-        />
 
       </div>
-
     </section>
   );
 };
