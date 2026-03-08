@@ -28,11 +28,11 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-green-400 py-20 flex justify-center items-center px-4">
+    <section className="bg-[#0B0B0F] flex justify-center items-center px-4">
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-white w-full max-w-2xl p-8 rounded-xl border border-black shadow-xl hover:shadow-2xl transition-all"
+        className="bg-[#111111] w-full max-w-2xl p-8 rounded-xl border border-gray-800 shadow-lg hover:shadow-2xl transition-all"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Connect with me</h2>
 
@@ -42,23 +42,23 @@ const ContactForm = () => {
             name="user_name"
             placeholder="Name"
             required
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+            className="flex-1 px-4 py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
           />
           <input
             type="email"
             name="user_email"
             placeholder="Email"
             required
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+            className="flex-1 px-4 py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
           />
         </div>
 
         <textarea
           name="message"
           placeholder="Your message"
-          rows={4}
+          rows={2}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-md mb-4 focus:outline-none"
+          className="flex-1 px-20 py-3 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
         />
 
         <input type="file" name="attachment" className="mb-6" />
