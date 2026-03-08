@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,37 +6,64 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black text-white px-6 py-4 z-50 shadow-md rounded-b-3xl">
+    <nav className="fixed top-0 left-0 w-full bg-[#0B0B0F]/90 backdrop-blur-md text-white px-6 py-4 z-50 border-b border-gray-800">
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center max-w-6xl mx-auto">
+
         {/* Logo */}
-        <div className="text-3xl font-arizonia">Aditya Sonawane</div>
+        <div className="text-2xl font-bold">
+          Aditya<span className="text-orange-500">.BS</span>
+        </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-10 text-lg font-semibold">
-          <li className="hover:text-yellow-300">
-            <a href="#home">Home</a>
+        <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-300">
+
+          <li>
+            <a href="#home" className="hover:text-orange-500 transition">
+              Home
+            </a>
           </li>
-          <li className="hover:text-yellow-300">
-            <a href="#about">About</a>
+
+          <li>
+            <a href="#about" className="hover:text-orange-500 transition">
+              About
+            </a>
           </li>
-          <li className="hover:text-yellow-300">
-            <a href="#projects">Projects</a>
+
+          <li>
+            <a href="#skills" className="hover:text-orange-500 transition">
+              Skills
+            </a>
           </li>
-          <li className="hover:text-yellow-300">
-            <a href="#contact">Contact us</a>
+
+          <li>
+            <a href="#projects" className="hover:text-orange-500 transition">
+              Projects
+            </a>
           </li>
+
+          <li>
+            <a href="#experience" className="hover:text-orange-500 transition">
+              Experience
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" className="hover:text-orange-500 transition">
+              Contact
+            </a>
+          </li>
+
         </ul>
 
         {/* Hamburger Button */}
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               {isOpen ? (
                 <path
@@ -57,23 +83,37 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="flex flex-col items-center mt-4 space-y-4 text-lg font-semibold md:hidden">
-          <li className="hover:text-yellow-300">
+        <ul className="flex flex-col items-center mt-6 space-y-5 text-lg font-medium md:hidden text-gray-300">
+
+          <li>
             <a href="#home" onClick={() => setIsOpen(false)}>Home</a>
           </li>
-          <li className="hover:text-yellow-300">
+
+          <li>
             <a href="#about" onClick={() => setIsOpen(false)}>About</a>
           </li>
-          <li className="hover:text-yellow-300">
+
+          <li>
+            <a href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
+          </li>
+
+          <li>
             <a href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
           </li>
-          <li className="hover:text-yellow-300">
-            <a href="#contact" onClick={() => setIsOpen(false)}>Contact us</a>
+
+          <li>
+            <a href="#experience" onClick={() => setIsOpen(false)}>Experience</a>
           </li>
+
+          <li>
+            <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+          </li>
+
         </ul>
       )}
     </nav>
