@@ -58,7 +58,7 @@ const ContactForm = () => {
           placeholder="Your message"
           rows={2}
           required
-          className="flex-1 px-20 py-3 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
+          className="flex-1 w-full py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
         />
 
         <input type="file" name="attachment" className="mb-6" />
