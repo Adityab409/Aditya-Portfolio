@@ -14,10 +14,12 @@
     "aos": "^2.3.4",
     "baseline-browser-mapping": "^2.10.0",
     "caniuse-lite": "^1.0.30001776",
+    "framer-motion": "^12.35.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.5.0"
+    "react-router-dom": "^7.5.0",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
