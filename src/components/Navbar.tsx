@@ -44,11 +44,10 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
           ? "bg-[#090A0F]/85 backdrop-blur-md border-b border-dark-border shadow-lg shadow-black/20 py-3.5"
           : "bg-transparent py-5"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
@@ -56,11 +55,12 @@ const Navbar: React.FC = () => {
           href="#home"
           className="group flex items-center gap-2 font-mono text-lg font-bold tracking-tight text-white"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold text-sm transition-transform duration-300 group-hover:scale-105 group-hover:bg-emerald-500/20">
-            AS
-          </span>
+          {/* <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold text-sm transition-transform duration-300 group-hover:scale-105 group-hover:bg-emerald-500/20">
+            
+
+          </span> */}
           <span className="tracking-wide">
-            Aditya<span className="text-emerald-400 font-mono">.dev</span>
+            Aditya<span className="text-emerald-400 font-mono">.Sonawane</span>
           </span>
         </a>
 
@@ -73,9 +73,8 @@ const Navbar: React.FC = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative px-3.5 py-1.5 text-xs font-medium transition-colors duration-200 rounded-full ${
-                  isActive ? "text-white font-semibold" : "text-slate-400 hover:text-slate-200"
-                }`}
+                className={`relative px-3.5 py-1.5 text-xs font-medium transition-colors duration-200 rounded-full ${isActive ? "text-white font-semibold" : "text-slate-400 hover:text-slate-200"
+                  }`}
               >
                 {isActive && (
                   <motion.span

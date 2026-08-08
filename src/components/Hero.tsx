@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-        
+
         {/* Left Column — Developer Identity & Positioning */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="/Aditya_Sonawane_CV.pdf"
+              href="/CV_AdityaSonawane.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-mono font-medium text-slate-200 bg-dark-card border border-dark-border rounded-xl hover:bg-dark-hover hover:border-slate-600 transition-all duration-200"
             >
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           className="lg:col-span-5 relative"
         >
           <div className="relative mx-auto max-w-md rounded-2xl bg-[#0C0E17] border border-dark-border p-5 shadow-2xl shadow-emerald-950/20 font-mono text-xs">
-            
+
             {/* Window Header */}
             <div className="flex items-center justify-between border-b border-dark-border pb-3 mb-4">
               <div className="flex items-center gap-2">
@@ -122,17 +122,15 @@ const Hero: React.FC = () => {
               <div className="flex items-center gap-1 bg-dark-surface p-1 rounded-lg border border-dark-border text-[11px]">
                 <button
                   onClick={() => setActiveTab("terminal")}
-                  className={`px-2.5 py-0.5 rounded transition ${
-                    activeTab === "terminal" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
-                  }`}
+                  className={`px-2.5 py-0.5 rounded transition ${activeTab === "terminal" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
+                    }`}
                 >
                   terminal.sh
                 </button>
                 <button
                   onClick={() => setActiveTab("stats")}
-                  className={`px-2.5 py-0.5 rounded transition ${
-                    activeTab === "stats" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
-                  }`}
+                  className={`px-2.5 py-0.5 rounded transition ${activeTab === "stats" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
+                    }`}
                 >
                   metrics.json
                 </button>
@@ -150,7 +148,7 @@ const Hero: React.FC = () => {
                 <div className="p-3 rounded-xl bg-[#07080E] border border-dark-border space-y-1.5 text-[11px]">
                   <div className="text-emerald-400 font-bold">$ whoami</div>
                   <div className="text-slate-300">"Aditya Sonawane - Java Full Stack Developer"</div>
-                  
+
                   <div className="text-emerald-400 font-bold pt-2">$ cat stack.config</div>
                   <div className="text-amber-300">Frameworks: [Spring Boot, Spring MVC, Hibernate]</div>
                   <div className="text-sky-300">Databases: [PostgreSQL, MySQL]</div>
