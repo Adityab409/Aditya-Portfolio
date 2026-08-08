@@ -4,46 +4,40 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        arizonia: ['Arizonia', 'cursive'],
-        montez: ['Montez', 'cursive'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      colors: {
+        dark: {
+          DEFAULT: '#090A0F',
+          surface: '#12141D',
+          card: '#161925',
+          border: '#232738',
+          hover: '#1F2436',
+        },
+        brand: {
+          emerald: '#10B981',
+          amber: '#F59E0B',
+          cyan: '#06B6D4',
+        }
       },
       animation: {
-        'float-slow': 'float 8s ease-in-out infinite',
-        'float-fast': 'float 5s ease-in-out infinite',
-        floatX: 'floatX 6s ease-in-out infinite',
-        floatY: 'floatY 8s ease-in-out infinite',
-        floatXReverse: 'floatXReverse 5s ease-in-out infinite',
-        floatYReverse: 'floatYReverse 7s ease-in-out infinite',
-        floatRotate: 'floatRotate 10s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float-slow': 'float 6s ease-in-out infinite',
+        'data-flow': 'dataFlow 3s linear infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
-        floatX: {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '50%': { transform: 'translateX(20px)' },
-        },
-        floatY: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        floatXReverse: {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '50%': { transform: 'translateX(-20px)' },
-        },
-        floatYReverse: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(20px)' },
-        },
-        floatRotate: {
-          '0%': { transform: 'rotate(0deg) translateY(0)' },
-          '50%': { transform: 'rotate(3deg) translateY(-10px)' },
-          '100%': { transform: 'rotate(0deg) translateY(0)' },
-        },
+        dataFlow: {
+          '0%': { strokeDashoffset: '100' },
+          '100%': { strokeDashoffset: '0' },
+        }
       },
     },
   },
   plugins: [],
 };
+

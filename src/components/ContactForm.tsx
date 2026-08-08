@@ -1,77 +1,121 @@
 
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { HiPaperAirplane, HiCheckCircle } from "react-icons/hi";
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMsg("");
 
     if (formRef.current) {
       emailjs
         .sendForm(
-          'service_nvid1ij', // 🔁 Replace with your actual service ID
-          'template_usjmr98', // 🔁 Replace with your actual template ID
+          "service_nvid1ij",
+          "template_usjmr98",
           formRef.current,
-          'LPP5cFo_6C9q5ySvU'   // 🔁 Replace with your public EmailJS key
+          "LPP5cFo_6C9q5ySvU"
         )
         .then(() => {
-          alert('Form submitted!');
+          setIsSubmitting(false);
+          setSubmitted(true);
           formRef.current?.reset();
         })
         .catch((err) => {
-          alert('Failed to send message. Please try again.');
+          setIsSubmitting(false);
+          setErrorMsg("Failed to send message. Please try emailing adityasonawane409@gmail.com directly.");
           console.error(err);
         });
     }
   };
 
   return (
-    <section className="bg-[#0B0B0F] flex justify-center items-center px-4">
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        className="bg-[#111111] w-full max-w-2xl p-8 rounded-xl border border-gray-800 shadow-lg hover:shadow-2xl transition-all"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">Connect with me</h2>
+    <div className="p-6 sm:p-8 rounded-2xl bg-dark-card border border-dark-border shadow-2xl relative">
+      <h3 className="text-xl font-bold text-white mb-2">Send a Direct Message</h3>
+      <p className="text-xs text-slate-400 mb-6">
+        Fill out the form below to deliver a message straight to my inbox.
+      </p>
 
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Name"
-            required
-            className="flex-1 px-4 py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
-          />
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Email"
-            required
-            className="flex-1 px-4 py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
-          />
+      {submitted ? (
+        <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3">
+          <HiCheckCircle className="text-4xl text-emerald-400 mx-auto" />
+          <h4 className="text-lg font-bold text-white">Message Sent Successfully!</h4>
+          <p className="text-xs text-slate-300">
+            Thank you for reaching out. I'll get back to you as soon as possible.
+          </p>
+          <button
+            onClick={() => setSubmitted(false)}
+            className="mt-2 px-4 py-2 text-xs font-mono text-emerald-400 underline hover:text-emerald-300"
+          >
+            Send another message
+          </button>
         </div>
+      ) : (
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-mono text-slate-400 mb-1">Your Name *</label>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Aditya Sonawane"
+                required
+                className="w-full px-4 py-3 rounded-xl bg-dark-surface border border-dark-border text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+              />
+            </div>
 
-        <textarea
-          name="message"
-          placeholder="Your message"
-          rows={2}
-          required
-          className="flex-1 w-full py-2 bg-[#0B0B0F] border border-gray-700 rounded-md focus:outline-none"
-        />
+            <div>
+              <label className="block text-xs font-mono text-slate-400 mb-1">Your Email *</label>
+              <input
+                type="email"
+                name="user_email"
+                placeholder="name@domain.com"
+                required
+                className="w-full px-4 py-3 rounded-xl bg-dark-surface border border-dark-border text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+              />
+            </div>
+          </div>
 
-        <input type="file" name="attachment" className="mb-6" />
+          <div>
+            <label className="block text-xs font-mono text-slate-400 mb-1">Your Message *</label>
+            <textarea
+              name="message"
+              placeholder="Tell me about your project, idea, or role opportunity..."
+              rows={4}
+              required
+              className="w-full px-4 py-3 rounded-xl bg-dark-surface border border-dark-border text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition resize-none"
+            />
+          </div>
 
-        <button
-          type="submit"
-          className="w-full bg-black text-white font-semibold py-3 rounded-md transition hover:bg-white hover:text-black border border-black"
-        >
-          Submit now 🚀
-        </button>
-      </form>
-    </section>
+          {errorMsg && (
+            <p className="text-xs font-mono text-red-400">{errorMsg}</p>
+          )}
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full py-3.5 px-6 rounded-xl font-mono text-xs font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all duration-200 shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            {isSubmitting ? (
+              <span>Transmitting Message...</span>
+            ) : (
+              <>
+                <HiPaperAirplane className="text-sm rotate-45" />
+                <span>Submit Message</span>
+              </>
+            )}
+          </button>
+        </form>
+      )}
+    </div>
   );
 };
 
 export default ContactForm;
+
